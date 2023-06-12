@@ -1,0 +1,95 @@
+{% extends 'base2.html' %}
+{% load static %}
+{% block content %}
+<!doctype html>
+<html lang="ko">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="style_word" type="text/css" href="main_page.css">
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">-->
+<!--    <link rel="stylesheet" type="text/css" href="{% static 'main_page.css' %}">-->
+    <title>단어 페이지</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Noto+Sans+KR:wght@100;300;700&display=swap');
+        #upbtn {
+              top: 20%;
+              left: 88%;
+              width: 150px;
+              height: 50px;
+              background-color: #FEF1FD;
+              border: #551E69 medium solid;
+              position: fixed;
+              z-index: 2;
+            }
+
+            #downbtn {
+              top: 30%;
+              left: 88%;
+              width: 150px;
+              height: 50px;
+              background-color: #FEF1FD;
+              border: #551E69 medium solid;
+              position: fixed;
+              z-index: 2;
+            }
+
+             #startbtn {
+              top: 70%;
+              left: 88%;
+              width: 150px;
+              height: 150px;
+              background-color: #FEF1FD;
+              border: #551E69 medium solid;
+              position: fixed;
+              z-index: 2;
+            }
+    </style>
+    <script type="text/javascript">
+        function downScroll() {
+        var winY = window.pageYOffset;
+        window.scrollTo({top:winY+742, behavior: 'smooth'});
+        console.log(winY);
+        }
+
+        function upScroll() {
+            var winY = window.pageYOffset;
+            window.scrollTo({top:winY-742, behavior: 'smooth'});
+            console.log(winY);
+        }
+    </script>
+
+</head>
+<body style="background-color: #FEF1FD;">
+<div >
+    <img src="/static/webcam/001.png" style="position: absolute; left:0px; top:0px; width:1300px; height:742px;"></img>
+</div>
+<div>
+    <img src="/static/webcam/002.png" style="position: absolute; left: 0px; top:745px; width:1300px; height:742px;"></img>
+</div>
+<div style="position: absolute; left: 0px; top:1484px; ">
+    <video controls autoplay style="width:1300px; " id="video_obj">
+        <source src="/static/webcam/video1635126523.mp4" type="video/mp4">
+    </video>
+</div>
+<div class="container">
+       <div style="position: relative;">
+        <input id="upbtn" class="btn btn-primary" style="color:#551E69; font-size: 30px; line-height: 30px;" type="button" value="올려보기" onclick="upScroll()">
+        <input id="downbtn" class="btn btn-primary" style="color:#551E69; font-size: 30px; line-height: 30px;" type="button" value="내려보기" onclick="downScroll()">
+        <div><a id="startbtn" class="btn btn--stripe analbtn" style="color:#551E69; font-size: 30px; line-height: 60px;" href="/common/login">시 작<br>하 기</a></div></div>
+</div>
+</div>
+</body>
+
+<!--    <div><a href="{% url 'final:word_trans' %}" class="btn btn-primary">분석 버튼</a></div>-->
+<script src="{% static 'app_word.js' %}"></script>
+<!--<div><a href="{% url 'final:word_trans' %}" class="btn btn-primary">분석 버튼</a></div>-->
+<script>
+    function video_fullscreen() {
+        document.getElementById("video_obj").requestFullscreen();
+    }
+</script>
+</html>
+
+{% endblock %}
