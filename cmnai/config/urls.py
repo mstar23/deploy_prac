@@ -21,6 +21,6 @@ urlpatterns = [
     path('', views.test_page, name='test_page'),
     path('admin/', admin.site.urls),
     path('main/', include('main.urls')),
-    path('common/', include('common.urls')),
+    # path('common/', include('common.urls')),
 
 ]

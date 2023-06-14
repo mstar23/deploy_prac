@@ -1,0 +1,17 @@
+
+{% block content %}
+{% load static %}
+    <link rel="style_word" type="text/css" href="/static/style_word.css">
+    <div style="background-color: #EBECFA">
+        <p style="font-size: 80px; position: fixed; top: 20%; left: 380px; text-align: center;">👆<br>가위</p>
+        <p style="font-size: 80px; position: fixed; top: 20%; left: 610px; text-align: center;">✊<br>바위</p>
+        <p style="font-size: 80px; position: fixed; top: 20%; left: 840px; text-align: center;">✋<br>보</p>
+        <p style="font-size: 80px; position: fixed; top: 20%; left: 1000px; text-align: center;">✌️<br>김치</p>
+        <p style="font-size: 80px; position: fixed; top: 50%; left: 380px; text-align: center;">🤙<br>전화</p>
+        <p style="font-size: 80px; position: fixed; top: 50%; left: 560px; text-align: center;">👌<br>오케이</p>
+        <p style="font-size: 80px; position: fixed; top: 50%; left: 820px; text-align: center;">🤘<br>여우</p>
+        <p style="font-size: 80px; position: fixed; top: 50%; left: 1000px; text-align: center;">👍<br>최고</p>
+        <div><a class="btn btn-primary" style="color:black; line-height: 100px; padding: 0px; position: absolute; top: 600px; left: 350px; font-size: 70px; border-width: medium; width: 800px; height: 100px; background-color:#EBECFA; border-color: #551E69; color: #551E69; " href="{% url 'main:hand' %}">자 이제 시작해볼까요?</a></div>
+    </div>
+
+{% endblock %}
