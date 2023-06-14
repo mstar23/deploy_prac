@@ -18,7 +18,7 @@ def hand(request):
     mp_drawing_styles = mp.solutions.drawing_styles
 
     # For webcam input:
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(1)
 
     with mp_hands.Hands(
             min_detection_confidence=0.5,
