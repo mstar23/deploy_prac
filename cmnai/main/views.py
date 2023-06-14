@@ -7,12 +7,8 @@ import numpy as np
 
 
 # Create your views here.
-def first_page(request):
-    return render(request, 'first_page.html')
-
-def main_page(request):
-    return render(request, 'main_page.html')
-
+def test_page(request):
+    return render(request, 'main/test_page.html')
 def hand(request):
     mp_drawing = mp.solutions.drawing_utils
     mp_hands = mp.solutions.hands
