@@ -8,5 +8,5 @@ urlpatterns = [
     # path('main_page/', views.main_page, name='main_page'),
     path('pose/', views.pose, name='pose'),
     path('hand/', views.hand, name='hand'),
-
+    path('camt/', views.cam_test, name='camt'),
 ]
