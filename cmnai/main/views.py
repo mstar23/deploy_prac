@@ -5,6 +5,8 @@ import mediapipe as mp
 import cv2
 from PIL import ImageFont, ImageDraw, Image
 import numpy as np
+import os
+import random
 import base64
 from django.views.decorators.csrf import csrf_exempt
 
@@ -12,13 +14,26 @@ from django.views.decorators.csrf import csrf_exempt
 def test_page(request):
     return render(request, 'main/test_page.html')
 
+def main_page(request):
+    return render(request, 'main_page.html')
+
+def camera_view(request):
+    folder_path = 'C://Users//mjy30//deploy_prac//cmnai//static//cam_view'
+    image_paths = []
+    for filename in os.listdir(folder_path):
+        if filename.endswith('.png'):  # 확장자가 .png인 파일만 리스트에 추가합니다, .jpg 확장자도 원하면 or filename.endswith('.jpg') 추가
+            image_paths.append(filename)
+    random_image_path = random.choice(image_paths)
+    img_path = {'img_path': random_image_path}
+    return render(request, 'main/camera_view.html', img_path)
+
 def hand(request):
     mp_drawing = mp.solutions.drawing_utils
     mp_hands = mp.solutions.hands
     mp_drawing_styles = mp.solutions.drawing_styles
 
     # For webcam input:
-    cap = cv2.VideoCapture(1)
+    cap = cv2.VideoCapture(0)
 
     with mp_hands.Hands(
             min_detection_confidence=0.5,

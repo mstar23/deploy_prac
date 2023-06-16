@@ -1,0 +1,9 @@
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" type="text/css" href="{% static 'main_page.css' %}">
+    <div style="position: fixed; top: 150px; left: 1070px; font-size: 50px "><a class="btn btn--stripe">같이 즐겨요</a></div>
+    <div style="position: fixed; top: 320px; left: 1100px; font-size: 25px" ><a href="{% url 'main:pose' %}" class="btn btn--radius">🙋‍♀포즈 따라하기🙋‍♂️️</a></div>
+    <div style="position: fixed; top: 420px; left: 1110px; font-size: 25px" ><a href="{% url 'main:camera_view' %}" class="btn btn--radius">👴포즈 맞추기👵</a></div>
+
+{% endblock %}
